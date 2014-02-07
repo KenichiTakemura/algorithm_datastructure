@@ -1,0 +1,11 @@
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+*.iml
+
+# build
+target/
+bin/
+test-output/
