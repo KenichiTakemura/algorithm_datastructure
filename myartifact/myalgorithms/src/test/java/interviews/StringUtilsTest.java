@@ -15,8 +15,23 @@ public class StringUtilsTest {
 	public void beforeClass() {
 		r = new StringUtils();
 	}
-
+	
 	@Test
+	public void testContainsOther() {
+		assertEquals(r.containsOther(null,null), 0);
+		assertEquals(r.containsOther(null,"bar"), -1);
+		assertEquals(r.containsOther("bar",null), -1);
+		assertEquals(r.containsOther("ba","bar"), -1);
+		assertEquals(r.containsOther("bar","bar"), 0);
+		assertEquals(r.containsOther("Bar","bar"), -1);
+		assertEquals(r.containsOther("rebar","bar"), 2);
+		assertEquals(r.containsOther("barre","bar"), 0);
+		assertEquals(r.containsOther("rebarbar","bar"), 2);
+		assertEquals(r.containsOther("rebabar","bar"), 4);
+		assertEquals(r.containsOther("BarbarbaR","bar"), 3);
+	}
+
+	//@Test
 	public void f1() {
 		assertEquals(r.reverse(""), "");
 		assertEquals(r.reverse("t"), "t");
@@ -34,7 +49,7 @@ public class StringUtilsTest {
 		assertEquals(r.removeDuplicated("ddddddddddddd"), "d");
 	}
 
-	@Test
+	//@Test
 	public void f2() {
 		assertTrue(r.bracketMatch(""));
 		assertFalse(r.bracketMatch("{{{}}"));

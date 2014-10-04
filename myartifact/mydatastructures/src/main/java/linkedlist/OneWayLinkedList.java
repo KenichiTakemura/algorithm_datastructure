@@ -2,8 +2,6 @@ package linkedlist;
 
 import java.util.Hashtable;
 
-import linkedlist.LinkedList.ListNode;
-
 public class OneWayLinkedList<E extends Comparable<? super E>> extends
 		AbstractLinkedList<E> {
 
